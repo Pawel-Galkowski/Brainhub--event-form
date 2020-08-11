@@ -1,5 +1,6 @@
 "use strict";
 const express = require("express");
+const mongoose = require("mongoose");
 const path = require("path");
 const bodyParser = require("body-parser");
 const forms = require("./routes/forms");
@@ -8,6 +9,13 @@ require("./middleware/EventFormMailer");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+const db = require("./config/keys");
+
+mongoose
+  .connect(db.mongoURI, db.options)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err));
 
 app.use("/forms", forms);
 

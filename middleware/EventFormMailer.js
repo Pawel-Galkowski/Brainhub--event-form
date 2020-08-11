@@ -29,10 +29,13 @@ async function EventFormMailer(form) {
           </div>
               </div>`,
     };
-    transporter.sendMail(mailOptions, (error) => {
-      if (error) return(error);
+    let resp = transporter.sendMail(mailOptions, (error) => {
+      if (error) {
+        console.log(error);
+        return error;
+      } else return true;
     });
-    return true;
+    return resp;
   } catch (err) {
     return err;
   }
