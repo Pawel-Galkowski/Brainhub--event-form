@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { eventForm } from "../../actions/forms";
@@ -11,19 +11,18 @@ const EventForm = ({ eventForm }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  useEffect(() => {
+    setFormData({ ...formData, formName: eventName, subject: eventSubject });
+  }, []);
+
   const formSubmit = (e) => {
-    beforePush();
     e.preventDefault();
     eventForm(formData);
+    console.log(formData);
     setFormData({});
     setTimeout(() => {
       window.location.reload();
     }, 3000);
-  };
-
-  const beforePush = () => {
-    setFormData({ ...formData, formName: eventName });
-    setFormData({ ...formData, subject: eventSubject });
   };
 
   const eventName = "Brainhub Event";
