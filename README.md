@@ -1,6 +1,7 @@
 # Brainhub event form
 
-Application which are showing how to create form in node.js.
+Application which are showing how to create event form in node.js.
+Application saving data to database and sending a confirmation to user email.
 Front-end of appliacation is created in react-redux.
 
 ## Test application
@@ -17,6 +18,7 @@ If you don't have the email -> check SPAM folder.
     - Redux
     - HTML5
     - SASS
+    - MongoDB
 
 ## Installation
 To install appliaction you need to have a NPM(Node Package Manager). You can read about it on main NPM website.
