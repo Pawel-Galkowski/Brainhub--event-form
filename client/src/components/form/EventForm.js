@@ -11,9 +11,11 @@ const EventForm = ({ eventForm }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+/*eslint-disable */
   useEffect(() => {
     setFormData({ ...formData, formName: eventName, subject: eventSubject });
   }, []);
+/*eslint-enable */
 
   const formSubmit = (e) => {
     e.preventDefault();

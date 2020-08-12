@@ -29,34 +29,4 @@ router.post("/eventForm", async (req, res) => {
   }
 });
 
-// @route   Post forms/newRegister
-// @desc    Post new person to database
-// @access  Private
-
-// router.post("/newRegister", async (req, res) => {
-//   const { name, surname, email, date } = req.body;
-
-//   const register = new Person({
-//     name: name,
-//     surname: surname,
-//     email: email,
-//     date: date,
-//   });
-
-//   try {
-//     // let checkRegister = await Person.findOne({ email });
-//     // if (Object.entries(register) === Object.entries(checkRegister)) {
-//     //   return res
-//     //     .status(400)
-//     //     .json({ errors: [{ msg: "User already registered" }] });
-//     // }
-
-//     await register.save();
-//     return res.json({ msg: "User saved" });
-//   } catch (err) {
-//     console.log(err);
-//     return res.status(400).json({ errors: { msg: "server error" } });
-//   }
-// });
-
 module.exports = router;

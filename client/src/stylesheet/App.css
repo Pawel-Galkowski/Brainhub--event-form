@@ -36,27 +36,11 @@ button:focus {
   outline: none;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.container {
-  width: 100vw;
-  height: 100%;
-}
-
 .alert {
-  padding: 0.8rem 2rem;
+  display: block;
+  padding: 0.8rem 0;
   border: 1px solid transparent;
-  position: fixed;
   font-size: 1.1rem;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 9999;
 }
@@ -119,6 +103,7 @@ button:focus {
   -webkit-box-shadow: 11px 9px 15px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 11px 9px 15px 0px rgba(0, 0, 0, 0.75);
   padding: 1rem 2rem;
+  background-color: #eeeeee;
 }
 
 .fullSide .main-container button {
@@ -168,6 +153,7 @@ button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 45%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -217,6 +203,10 @@ button:focus {
   font-weight: 900;
   font-size: 1.2em;
   margin: 0 0 1rem 0;
+}
+
+.fullSide .formTemplate article .headerText h3 {
+  color: #31708f;
 }
 
 .fullSide .formTemplate article h3 {
@@ -276,58 +266,5 @@ button:focus {
   border-color: #f72c25 !important;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    -webkit-animation: App-logo-spin infinite 20s linear;
-            animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
 }
 /*# sourceMappingURL=App.css.map */
