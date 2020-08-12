@@ -10,7 +10,7 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.2",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
@@ -20,6 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "testEnviroment": "react"
   },
   "eslintConfig": {
     "extends": "react-app"

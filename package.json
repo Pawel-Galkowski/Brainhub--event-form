@@ -8,7 +8,11 @@
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "test": "jest --watch"
+  },
+  "jest": {
+    "testEnviroment": "node"
   },
   "description": "Brainhub event form by ITGalkowski",
   "author": "Pawel Galkowski",
@@ -21,9 +25,11 @@
     "core-util-is": "^1.0.2",
     "debug": "^4.1.1",
     "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "express-validator": "^6.5.0",
     "git": "^0.1.5",
+    "jest": "^24.9.0",
     "jsonwebtoken": "^8.5.1",
     "mime": "^2.4.6",
     "mongoose": "^5.9.28",
