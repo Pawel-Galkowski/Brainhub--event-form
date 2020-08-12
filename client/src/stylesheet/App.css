@@ -97,7 +97,6 @@ button:focus {
 
 .fullSide .main-container {
   width: 70%;
-  max-width: 900px;
   margin: 0 auto;
   border: 2px solid #2d1e2f;
   -webkit-box-shadow: 11px 9px 15px 0px rgba(0, 0, 0, 0.75);
@@ -210,7 +209,7 @@ button:focus {
 }
 
 .fullSide .formTemplate article h3 {
-  margin: 2rem 0 0;
+  margin: 2rem 0 1rem;
 }
 
 .fullSide .formTemplate article .mainForm {
@@ -266,5 +265,32 @@ button:focus {
   border-color: #f72c25 !important;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+@media (min-width: 1024px) {
+  .fullSide .main-container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: 14px;
+  }
+  .fullSide .formTemplate article .headerText {
+    margin: 1rem 1%;
+  }
+}
+
+@media (max-width: 425px) {
+  .fullSide .formTemplate .double-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .fullSide .formTemplate .double-box .inline-box {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=App.css.map */

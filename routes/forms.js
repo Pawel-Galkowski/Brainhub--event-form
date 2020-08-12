@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const standardMailer = require("../middleware/EventFormMailer");
 const Event = require("../models/Events");
-const { check, validationResult } = require("express-validator/check");
+const { check, validationResult } = require("express-validator");
 
 // @route   Post forms/eventForm
 // @desc    Post standard form

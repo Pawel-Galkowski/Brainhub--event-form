@@ -9,10 +9,10 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "test": "jest --watch"
+    "test": "jest --watch --config=./config/jest.config.js"
   },
   "jest": {
-    "testEnviroment": "node"
+    "testEnvironment": "node"
   },
   "description": "Brainhub event form by ITGalkowski",
   "author": "Pawel Galkowski",
@@ -42,7 +42,8 @@
     "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
   },
   "repository": {
     "type": "git",

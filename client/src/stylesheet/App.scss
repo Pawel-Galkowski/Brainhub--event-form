@@ -85,7 +85,6 @@ button {
 
   .main-container {
     width: 70%;
-    max-width: 900px;
     margin: 0 auto;
     border: 2px solid #2d1e2f;
     -webkit-box-shadow: 11px 9px 15px 0px rgba(0, 0, 0, 0.75);
@@ -154,13 +153,13 @@ button {
             margin: 0 0 1rem 0;
           }
         }
-        h3{
+        h3 {
           color: #31708f;
         }
       }
 
       h3 {
-        margin: 2rem 0 0;
+        margin: 2rem 0 1rem;
       }
 
       .mainForm {
@@ -206,6 +205,34 @@ button {
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .fullSide .main-container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: 14px;
+  }
+
+  .fullSide .formTemplate {
+    article .headerText {
+      margin: 1rem 1%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .fullSide .formTemplate .double-box {
+    flex-direction: column;
+
+    .inline-box {
+      width: 100%;
     }
   }
 }
