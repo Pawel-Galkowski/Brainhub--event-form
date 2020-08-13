@@ -22,7 +22,7 @@ async function EventFormMailer(form) {
                  <p>Thank you ${fullName} for joining our event.<br/>
                  Some informations about it are below.</p>
                  <p>
-                  ${form.formName.length < 1 ? "" : "Title: "+form.formName+"<br/>)"}
+                  ${form.formName.length < 1 ? "" : "Title: "+form.formName+"<br/>"}
                   Date: ${form.date}
                   </p>
               </div>
