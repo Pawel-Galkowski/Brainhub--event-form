@@ -9,7 +9,7 @@ describe("NodeJS API TESTS", () => {
     await Event.findOneAndRemove({ email: testEmail });
   });
 
-  test("test eventForm", async () => {
+  test("Post eventForm data", async () => {
     await request(app)
       .post("/forms/eventForm")
       .send({
@@ -18,6 +18,13 @@ describe("NodeJS API TESTS", () => {
         email: testEmail,
         date: "06-05-2025",
       })
+      .expect('"Registration confirmed"')
       .expect(200);
   });
+
+  test("Get random person from db", async () => {
+    await request(app)
+    .get("/forms/persons")
+    .expect(200);
+  })
 });

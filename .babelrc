@@ -6,11 +6,40 @@
                 "useBuiltIns": "entry"
             }
         ],
-        "@babel/preset-react"
+        [
+            "@babel/preset-react",
+            {
+                "pragma": "dom", // default pragma is React.createElement (only in classic runtime)
+                "pragmaFrag": "DomFrag", // default is React.Fragment (only in classic runtime)
+                "throwIfNamespace": false, // defaults to true
+                "runtime": "classic", // defaults to classic
+                "importSource": "custom-jsx-library" // defaults to react (only in automatic runtime)
+            }
+        ],
+        [
+            "@babel/plugin-transform-react-jsx",
+            {
+                "throwIfNamespace": false, // defaults to true
+                "runtime": "automatic", // defaults to classic
+                "importSource": "custom-jsx-library" // defaults to react
+            }
+        ]
     ],
     "plugins": [
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-export-default-from",
         "react-hot-loader/babel"
-    ]
+    ],
+    "env": {
+        "development": {
+            "presets": [
+                [
+                    "@babel/preset-react",
+                    {
+                        "development": true
+                    }
+                ]
+            ]
+        }
+    }
 }

@@ -24,7 +24,7 @@ router.post(
       // Return any errors with 400 status
       return res.status(400).json({ errors: errors.array() });
     }
-    
+
     const { name, surname, email, formName, date } = req.body;
 
     const register = new Event({
@@ -40,11 +40,29 @@ router.post(
         return value;
       });
       await register.save();
-      return res.json({ msg: "Registration confirmed" });
+      return res.json("Registration confirmed");
     } catch (err) {
-      return res.status(400).json({ errors: [{ msg: "Invalid  data" }] });
+      return res.status(400).json("Invalid  data");
     }
   }
 );
 
+
+// @route   GET forms/persons
+// @desc    Get random person
+// @access  Private
+
+router.get("/persons", async (req, res) => {
+  try {
+    const person = await Event.aggregate([{ $sample: { size: 1 } }]);
+
+    if (!person)
+      return res.status(400).json("No persons registered");
+
+    res.json(person);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json("Server Error");
+  }
+});
 module.exports = router;
