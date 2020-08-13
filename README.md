@@ -35,6 +35,10 @@ GMAIL_USER=[Your email]
 GMAIL_PASS=[Your password]
 ```
 
+## Database
+Screenshot from database with test persons.
+<img src="https://ibb.co/Zzckpn4" style="width: 200px; height: 200px; />
+
 ## Usage
 To use application you need to type
 
