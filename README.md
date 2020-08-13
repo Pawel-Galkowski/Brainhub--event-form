@@ -37,7 +37,7 @@ GMAIL_PASS=[Your password]
 
 ## Database
 Screenshot from database with test persons.
-<img src="https://ibb.co/Zzckpn4" style="width: 200px; height: 200px; />
+![Screenshot DB](https://i.ibb.co/v4LK67y/zrzutdb.png)"
 
 ## Usage
 To use application you need to type
