@@ -1,9 +1,12 @@
 "use strict";
+require("core-js/stable");
+require("regenerator-runtime/runtime");
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const bodyParser = require("body-parser");
 const forms = require("./routes/forms");
+const fp = require("find-free-port")
 const app = express();
 require("./middleware/EventFormMailer");
 
@@ -29,7 +32,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const port = process.env.PORT || 4000;
+var port = process.env.PORT || 4000;
 
 const server = app.listen(port);
 

@@ -14,13 +14,15 @@ const EventsSchema = new Schema({
     type: String,
     required: true,
   },
-  eventName:{
-    type: String
+  eventName: {
+    type: String,
   },
   date: {
     type: Date,
     required: true,
-  }
+  },
 });
 
-module.exports = Events = mongoose.model("events", EventsSchema);
+const Events = mongoose.model("events", EventsSchema);
+
+module.exports = Events;
