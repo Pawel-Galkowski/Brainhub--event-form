@@ -5,10 +5,10 @@
 
 // test("renders component", async () => {
 //     const { getByText } = render(<EventForm/>)
-//     expect(getByText("error")).toBeInTheDocument()
+//     expect(getByText("Brainhub Event")).toBeInTheDocument()
 // });
 
 test("React test", async () => {
     let testValue = null;
     expect(testValue).toBeNull();
-} )
+})
