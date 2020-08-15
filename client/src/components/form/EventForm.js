@@ -11,11 +11,11 @@ const EventForm = ({ eventForm }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-/*eslint-disable */
+  /*eslint-disable */
   useEffect(() => {
     setFormData({ ...formData, formName: eventName, subject: eventSubject });
   }, []);
-/*eslint-enable */
+  /*eslint-enable */
 
   const formSubmit = (e) => {
     e.preventDefault();
@@ -71,9 +71,22 @@ const EventForm = ({ eventForm }) => {
                 required
               />
               <label>Event date</label>
-              <input type="date" name="date" onChange={onChange} required />
+              <input
+                type="date"
+                id="date"
+                data-testid="date"
+                name="date"
+                max='2099-12-31'
+                onChange={onChange}
+                required
+              />
               <Alert />
-              <input type="submit" value="Send" />
+              <input
+                id="submit"
+                data-testid="submit"
+                type="submit"
+                value="Send"
+              />
             </form>
           </article>
         </section>

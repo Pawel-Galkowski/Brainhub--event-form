@@ -9,7 +9,9 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "test": "jest --no-cache --watchAll --verbose"
+    "test-client": "npm test --prefix client --no-cache --verbose",
+    "test": "jest --env=node --no-cache --verbose",
+    "testAll": "concurrently \"npm test\" \"npm run test-client\" --watchAll"
   },
   "jest": {
     "testEnvironment": "node",
@@ -23,7 +25,6 @@
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/runtime": "^7.11.2",
-    "babel-jest": "^24.9.0",
     "bcryptjs": "^2.4.3",
     "chokidar": "^3.4.0",
     "concurrently": "^5.2.0",
@@ -43,6 +44,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-hot-loader": "^4.12.21",
+    "regenerator-runtime": "^0.13.7",
     "request": "^2.88.0",
     "serve-favicon": "^2.5.0",
     "validator": "^13.0.0",
@@ -59,7 +61,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^23.4.2",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.0",
     "jest": "^24.9.0",
     "nodemon": "^2.0.4",
