@@ -10,8 +10,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "testClient": "npm test --prefix client --no-cache --verbose",
-    "test": "jest --env=node --no-cache --verbose",
-    "testAll": "concurrently \"npm test\" \"npm run testClient\" --watchAll"
+    "test": "jest --no-cache --verbose --watchAll",
+    "testAll": "concurrently \"npm test\" \"npm run testClient\""
   },
   "jest": {
     "testEnvironment": "node",
