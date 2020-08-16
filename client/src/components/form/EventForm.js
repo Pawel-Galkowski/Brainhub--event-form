@@ -20,7 +20,6 @@ const EventForm = ({ eventForm }) => {
   const formSubmit = (e) => {
     e.preventDefault();
     eventForm(formData);
-    console.log(formData);
     setFormData({});
     setTimeout(() => {
       window.location.reload();
@@ -83,7 +82,7 @@ const EventForm = ({ eventForm }) => {
               <Alert />
               <input
                 id="submit"
-                data-testid="submit"
+                data-testid="send"
                 type="submit"
                 value="Send"
               />
