@@ -2,11 +2,6 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import App from "../App";
-import { mount } from 'enzyme';
-import { eventForm } from "../actions/forms";
-import Alert from "../components/layout/Alert";
-import { Provider } from "react-redux";
-import store from "../store";
 
 //test of react tests
 test("React test", async () => {
@@ -48,7 +43,7 @@ describe("Test Input values", () => {
 
 describe("submit button", () => {
   it("Trigger formSubmit", () => {
-    const onSubmitFn = jest.fn();
+
     const { getByTestId, queryByPlaceholderText } = render(<App />);
     const nameInput = queryByPlaceholderText("Name");
     const surnameInput = queryByPlaceholderText("Surname");
@@ -67,17 +62,20 @@ describe("submit button", () => {
     fireEvent.change(dateInput, { target: { value: "2020-08-20" } });
     expect(dateInput.value).toBe("2020-08-20");
 
+    // const mockCallBack = jest.fn();
     // fireEvent.click(getByTestId("send"));
-    // expect(formSubmit(formSubmit2)).toHaveBeenCalled();
+    // expect(formSubmit(mockCallBack)).toHaveBeenCalled();
 
-    const wrapper = mount(<App onSubmit={onSubmitFn} />);
-    const form = wrapper.find("form");
-    form.simulate("submit");
-    expect(onSubmitFn).toHaveBeenCalledTimes(1);
+    // const button = shallow(<App onSubmit={mockCallBack}>Ok!</App>);
+    // button.find('input[type="submit"]').simulate("click");
+    // expect(mockCallBack.mock.calls.length).toEqual(1);
+
+    // const wrapper = mount(<App onSubmit={onSubmitFn} />);
+    // const form = wrapper.find("form");
+    // form.simulate("submit");
+    // expect(onSubmitFn).toHaveBeenCalledTimes(1);
   });
 });
-
-//test alerts
 
 // describe("Test Alerts of redux", () => {
 //   it("Renders alerts correctly", () => {
