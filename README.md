@@ -40,6 +40,25 @@ Screenshot from database with test persons.
 
 ![Screenshot DB](https://i.ibb.co/v4LK67y/zrzutdb.png)"
 
+## Tests
+Application has implemented test by using jest.
+To run test type:
+
+Run all tests
+```Test Node
+npm run testAll
+```
+
+Test node
+```Test Node
+npm run testClient
+```
+
+Test Client
+```Test Client
+npm run testClient
+```
+
 ## Usage
 To use application you need to type
 
