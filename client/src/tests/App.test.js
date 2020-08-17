@@ -1,22 +1,23 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import TestUtils from 'react-dom/test-utils';
 import App from "../App";
 import { mount } from "enzyme";
 
-//test of react tests
 test("React test", async () => {
   let testValue = null;
   expect(testValue).toBeNull();
 });
 
-//test of renders
+
 describe("Render of components", () => {
   it("render correctly", () => {
     const { getByTestId, queryByPlaceholderText } = render(<App />);
-    expect(getByTestId("send")).toBeTruthy();
+    expect(queryByPlaceholderText("Name")).toBeTruthy();
     expect(queryByPlaceholderText("Surname")).toBeTruthy();
+    expect(queryByPlaceholderText("Email")).toBeTruthy();
+    expect(getByTestId("date")).toBeTruthy();
+    expect(getByTestId("send")).toBeTruthy();
   });
 });
 
@@ -68,7 +69,7 @@ describe("submit button", () => {
     expect(wrapper).toBeTruthy();
   });
 
-  it("Invalid trigger formSubmit", () => {
+  it("Invalid formSubmit", () => {
     const wrapper = mount(<App />);
     const form = wrapper.find("form").first();
 
