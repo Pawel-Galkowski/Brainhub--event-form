@@ -41,8 +41,9 @@ const EventForm = ({ eventForm }) => {
             <form className="mainForm" onSubmit={formSubmit}>
               <div className="double-box">
                 <div className="inline-box">
-                  <label for="name">First name</label>
+                  <label htmlFor="name">First name</label>
                   <input
+                    id="name"
                     type="text"
                     placeholder="Name"
                     name="name"
@@ -51,8 +52,9 @@ const EventForm = ({ eventForm }) => {
                   />
                 </div>
                 <div className="inline-box">
-                  <label for="surname">Last name</label>
+                  <label htmlFor="surname">Last name</label>
                   <input
+                    id="surname"
                     type="text"
                     placeholder="Surname"
                     name="surname"
@@ -61,19 +63,20 @@ const EventForm = ({ eventForm }) => {
                   />
                 </div>
               </div>
-              <label for="email">E-mail Adress</label>
+              <label htmlFor="email">E-mail Adress</label>
               <input
+                id="email"
                 type="email"
                 placeholder="Email"
                 name="email"
                 onChange={onChange}
                 required
               />
-              <label for="date">Event date</label>
+              <label htmlFor="date">Event date</label>
               <input
-                type="date"
                 id="date"
                 data-testid="date"
+                type="date"
                 name="date"
                 max="2099-12-31"
                 onChange={onChange}
