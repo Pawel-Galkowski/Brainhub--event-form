@@ -36,7 +36,7 @@ To not have a problems with other versions of modules use:
 SKIP_PREFLIGHT_CHECK=true
 ```
 
-To use mailing add gmail informations like:
+To use mailing - add gmail informations like:
 ```GMAIL
 GMAIL_USER=[Your email]
 GMAIL_PASS=[Your password]
