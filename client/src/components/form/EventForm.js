@@ -26,6 +26,7 @@ const EventForm = ({ eventForm }) => {
     }, 3000);
   };
 
+  const today = new Date().toISOString().substring(0, 10);
   const eventName = "Brainhub Event";
   const eventSubject = "Register confirmation";
 
@@ -78,6 +79,7 @@ const EventForm = ({ eventForm }) => {
                 data-testid="date"
                 type="date"
                 name="date"
+                min={today}
                 max="2099-12-31"
                 onChange={onChange}
                 required
