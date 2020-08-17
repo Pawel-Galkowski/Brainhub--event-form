@@ -34,12 +34,6 @@ Next, you need to create file ".env" in this file you need to save your gmail in
 GMAIL_USER=[Your email]
 GMAIL_PASS=[Your password]
 ```
-
-## Database
-Screenshot from database with test persons.
-
-![Screenshot DB](https://i.ibb.co/v4LK67y/zrzutdb.png)"
-
 ## Tests
 Application has implemented test by using jest.
 To run test type:
@@ -58,6 +52,11 @@ Test Client
 ```Test Client
 npm run testClient
 ```
+
+## Database
+Screenshot from database with test persons.
+
+![Screenshot DB](https://i.ibb.co/v4LK67y/zrzutdb.png)"
 
 ## Usage
 To use application you need to type
