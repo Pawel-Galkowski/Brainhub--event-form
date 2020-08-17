@@ -50,7 +50,7 @@ npm run testClient
 
 Test Client
 ```Test Client
-npm run testClient
+npm run test
 ```
 
 ## Database
