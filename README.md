@@ -36,6 +36,12 @@ To not have a problems with other versions of modules use:
 SKIP_PREFLIGHT_CHECK=true
 ```
 
+Database informations:
+```DATBASE
+DATABASE_LOGIN=[Your login]
+DATABASE_PASSWORD=[Your password]
+```
+
 To use mailing - add gmail informations like:
 ```GMAIL
 GMAIL_USER=[Your email]
