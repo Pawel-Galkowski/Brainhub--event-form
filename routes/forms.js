@@ -47,7 +47,6 @@ router.post(
   }
 );
 
-
 // @route   GET forms/persons
 // @desc    Get random person
 // @access  Private
@@ -56,8 +55,7 @@ router.get("/persons", async (req, res) => {
   try {
     const person = await Event.aggregate([{ $sample: { size: 1 } }]);
 
-    if (!person)
-      return res.status(400).json("No persons registered");
+    if (!person) return res.status(400).json("No persons registered");
 
     res.json(person);
   } catch (err) {
@@ -65,4 +63,20 @@ router.get("/persons", async (req, res) => {
     res.status(500).json("Server Error");
   }
 });
+
+
+// @route   DELETE forms/removePerson
+// @desc    Remove person by email
+// @access  Private
+
+router.delete("/removePerson", async (req, res) => {
+  try {
+    await Event.findOneAndRemove({ email: req.body.email });
+    res.json("Person removed");
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json("Server Error");
+  }
+});
+
 module.exports = router;

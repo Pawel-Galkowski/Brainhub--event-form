@@ -9,7 +9,6 @@ test("React test", async () => {
   expect(testValue).toBeNull();
 });
 
-
 describe("Render of components", () => {
   it("render correctly", () => {
     const { getByTestId, queryByPlaceholderText } = render(<App />);
@@ -50,23 +49,24 @@ describe("submit button", () => {
     const form = wrapper.find("form").first();
 
     const name = wrapper.find('input[name="name"]');
-    name.instance().value = 'cerny';
-    name.simulate('change', name);
+    name.instance().value = "cerny";
+    name.simulate("change", name);
 
     const surname = wrapper.find('input[name="surname"]');
-    surname.instance().value = 'cerny';
-    surname.simulate('change', surname);
+    surname.instance().value = "cerny";
+    surname.simulate("change", surname);
 
     const email = wrapper.find('input[name="email"]');
-    email.instance().value = 'email@input.pl';
-    email.simulate('change', email);
+    email.instance().value = "email@input.pl";
+    email.simulate("change", email);
 
     const date = wrapper.find('input[name="date"]');
-    date.instance().value = '2020-08-20';
-    date.simulate('change', date);
+    date.instance().value = "2020-08-20";
+    date.simulate("change", date);
 
     form.simulate("submit");
-    expect(wrapper).toBeTruthy();
+    // const spy = jest.spyOn(wrapper.instance(), 'getData');
+    expect(wrapper).toBeTruthy;
   });
 
   it("Invalid formSubmit", () => {
@@ -74,19 +74,21 @@ describe("submit button", () => {
     const form = wrapper.find("form").first();
 
     const surname = wrapper.find('input[name="surname"]');
-    surname.instance().value = 'cerny';
-    surname.simulate('change', surname);
+    surname.instance().value = "cerny";
+    surname.simulate("change", surname);
 
     const email = wrapper.find('input[name="email"]');
-    email.instance().value = 'email@input.pl';
-    email.simulate('change', email);
+    email.instance().value = "email@input.pl";
+    email.simulate("change", email);
 
     const date = wrapper.find('input[name="date"]');
-    date.instance().value = '2020-08-20';
-    date.simulate('change', date);
+    date.instance().value = "2020-08-20";
+    date.simulate("change", date);
 
     form.simulate("submit");
-    expect(wrapper.find(".wrong-data").first().text()).toBe("Name cannot be blank");
+    expect(wrapper.find(".wrong-data").first().text()).toBe(
+      "Name cannot be blank"
+    );
   });
 });
 

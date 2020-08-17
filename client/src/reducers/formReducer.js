@@ -1,6 +1,8 @@
 import {
   FORM_ERROR,
   FORM_SEND,
+  PERSON_REMOVED,
+  REMOVED_ERROR,
 } from "../actions/types";
 
 const initialState = {
@@ -14,6 +16,7 @@ export default function (state = initialState, action) {
   const { payload, type } = action;
 
   switch (type) {
+    case REMOVED_ERROR:
     case FORM_ERROR:
       return {
         ...state,
@@ -24,6 +27,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         forms: payload,
+        loading: false,
+      };
+    case PERSON_REMOVED:
+      return {
+        ...state,
+        person: payload,
         loading: false,
       };
     default:

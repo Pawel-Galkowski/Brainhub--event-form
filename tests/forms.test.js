@@ -6,7 +6,13 @@ describe("NodeJS API TESTS", () => {
   let testEmail = "a.serenada@ok.pl";
 
   afterAll(async () => {
-    await Event.findOneAndRemove({ email: testEmail });
+    await request(app)
+      .delete("/forms/removePerson")
+      .send({
+        email: testEmail,
+      })
+      .expect('"Person removed"')
+      .expect(200);
   });
 
   test("Post eventForm data", async () => {
@@ -25,4 +31,16 @@ describe("NodeJS API TESTS", () => {
   test("Get random person from db", async () => {
     await request(app).get("/forms/persons").expect(200);
   });
+
+  // The other way to remove
+  //
+  // test("Remove test person", async () => {
+  //   await request(app)
+  //     .delete("/forms/removePerson")
+  //     .send({
+  //       email: testEmail,
+  //     })
+  //     .expect('"Person removed"')
+  //     .expect(200);
+  // });
 });
