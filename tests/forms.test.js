@@ -4,9 +4,11 @@ const Event = require("../models/Events");
 
 describe("NodeJS API TESTS", () => {
   let testEmail = "a.serenada@ok.pl";
-  
-  afterAll(async () => {
-    await Event.findOneAndRemove({ email: testEmail });
+
+  describe("Remove test database", () => {
+    afterAll(async () => {
+      await Event.findOneAndRemove({ email: testEmail });
+    });
   });
 
   test("Post eventForm data", async () => {
@@ -23,8 +25,6 @@ describe("NodeJS API TESTS", () => {
   });
 
   test("Get random person from db", async () => {
-    await request(app)
-    .get("/forms/persons")
-    .expect(200);
-  })
+    await request(app).get("/forms/persons").expect(200);
+  });
 });
