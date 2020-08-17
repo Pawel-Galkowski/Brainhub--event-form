@@ -5,10 +5,8 @@ const Event = require("../models/Events");
 describe("NodeJS API TESTS", () => {
   let testEmail = "a.serenada@ok.pl";
 
-  describe("Remove test database", () => {
-    afterAll(async () => {
-      await Event.findOneAndRemove({ email: testEmail });
-    });
+  afterAll(async () => {
+    await Event.findOneAndRemove({ email: testEmail });
   });
 
   test("Post eventForm data", async () => {

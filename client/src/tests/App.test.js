@@ -33,8 +33,8 @@ describe("Test Input values", () => {
     fireEvent.change(surnameInput, { target: { value: "surnameInput" } });
     expect(surnameInput.value).toBe("surnameInput");
 
-    fireEvent.change(emailInput, { target: { value: "emailInput" } });
-    expect(emailInput.value).toBe("emailInput");
+    fireEvent.change(emailInput, { target: { value: "email@input.pl" } });
+    expect(emailInput.value).toBe("email@input.pl");
 
     fireEvent.change(dateInput, { target: { value: "2020-08-20" } });
     expect(dateInput.value).toBe("2020-08-20");
