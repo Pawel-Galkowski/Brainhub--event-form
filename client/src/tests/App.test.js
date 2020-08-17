@@ -1,7 +1,9 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+import TestUtils from 'react-dom/test-utils';
 import App from "../App";
+import { mount } from "enzyme";
 
 //test of react tests
 test("React test", async () => {
@@ -42,53 +44,50 @@ describe("Test Input values", () => {
 });
 
 describe("submit button", () => {
-  it("Trigger formSubmit", () => {
+  it("Valid trigger formSubmit", () => {
+    const wrapper = mount(<App />);
+    const form = wrapper.find("form").first();
 
-    const { getByTestId, queryByPlaceholderText } = render(<App />);
-    const nameInput = queryByPlaceholderText("Name");
-    const surnameInput = queryByPlaceholderText("Surname");
-    const emailInput = queryByPlaceholderText("Email");
-    const dateInput = getByTestId("date");
+    const name = wrapper.find('input[name="name"]');
+    name.instance().value = 'cerny';
+    name.simulate('change', name);
 
-    fireEvent.change(nameInput, { target: { value: "inputTest" } });
-    expect(nameInput.value).toBe("inputTest");
+    const surname = wrapper.find('input[name="surname"]');
+    surname.instance().value = 'cerny';
+    surname.simulate('change', surname);
 
-    fireEvent.change(surnameInput, { target: { value: "surnameInput" } });
-    expect(surnameInput.value).toBe("surnameInput");
+    const email = wrapper.find('input[name="email"]');
+    email.instance().value = 'email@input.pl';
+    email.simulate('change', email);
 
-    fireEvent.change(emailInput, { target: { value: "emailInput" } });
-    expect(emailInput.value).toBe("emailInput");
+    const date = wrapper.find('input[name="date"]');
+    date.instance().value = '2020-08-20';
+    date.simulate('change', date);
 
-    fireEvent.change(dateInput, { target: { value: "2020-08-20" } });
-    expect(dateInput.value).toBe("2020-08-20");
+    form.simulate("submit");
+    expect(wrapper).toBeTruthy();
+  });
 
-    // const mockCallBack = jest.fn();
-    // fireEvent.click(getByTestId("send"));
-    // expect(formSubmit(mockCallBack)).toHaveBeenCalled();
+  it("Invalid trigger formSubmit", () => {
+    const wrapper = mount(<App />);
+    const form = wrapper.find("form").first();
 
-    // const button = shallow(<App onSubmit={mockCallBack}>Ok!</App>);
-    // button.find('input[type="submit"]').simulate("click");
-    // expect(mockCallBack.mock.calls.length).toEqual(1);
+    const surname = wrapper.find('input[name="surname"]');
+    surname.instance().value = 'cerny';
+    surname.simulate('change', surname);
 
-    // const wrapper = mount(<App onSubmit={onSubmitFn} />);
-    // const form = wrapper.find("form");
-    // form.simulate("submit");
-    // expect(onSubmitFn).toHaveBeenCalledTimes(1);
+    const email = wrapper.find('input[name="email"]');
+    email.instance().value = 'email@input.pl';
+    email.simulate('change', email);
+
+    const date = wrapper.find('input[name="date"]');
+    date.instance().value = '2020-08-20';
+    date.simulate('change', date);
+
+    form.simulate("submit");
+    expect(wrapper.find(".wrong-data").first().text()).toBe("Name cannot be blank");
   });
 });
-
-// describe("Test Alerts of redux", () => {
-//   it("Renders alerts correctly", () => {
-//     const { getByTestId } = render(
-//       shallow(
-//         <Provider store={store}>
-//           <Alert alert={"Show perfectly"} />
-//         </Provider>
-//       ).exists(<h1>Test page</h1>)
-//     );
-//     expect(getByTestId("alerts")).toBe("Show perfectly");
-//   });
-// });
 
 // describe("Test Api of react", () => {
 //   let testEmail = "a.serenada@ok.pl";

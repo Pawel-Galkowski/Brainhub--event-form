@@ -84,7 +84,7 @@ const EventForm = ({ eventForm }) => {
               <h3>{eventName}</h3>
               <h1>Let's register to next event!</h1>
             </div>
-            <form className="mainForm" onSubmit={formSubmit}>
+            <form  data-testid="form" className="mainForm" onSubmit={formSubmit}>
               <div className="double-box">
                 <div className="inline-box">
                   <label htmlFor="name">First name</label>
