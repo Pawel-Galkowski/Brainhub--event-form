@@ -29,11 +29,19 @@ After all you need to type in manager
 npm install
 ```
 
-Next, you need to create file ".env" in this file you need to save your gmail informations like:
+Next, you need to create file ".env" in this file you need to add some data:
+
+To not have a problems with other versions of modules use:
+```
+SKIP_PREFLIGHT_CHECK=true
+```
+
+To use mailing - add gmail informations like:
 ```GMAIL
 GMAIL_USER=[Your email]
 GMAIL_PASS=[Your password]
 ```
+
 ## Tests
 Application has implemented test by using jest.
 To run test type:
