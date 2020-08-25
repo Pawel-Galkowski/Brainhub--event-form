@@ -25,9 +25,11 @@ To install appliaction you need to have a NPM(Node Package Manager). You can rea
 
 After all you need to type in manager
 
+
 ```GIT
 npm install
 ```
+
 
 Next, you need to create file ".env" in this file you need to add some data:
 
