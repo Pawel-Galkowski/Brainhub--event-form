@@ -80,3 +80,6 @@ To use application you need to type
 ```GIT
 npm start
 ```
+
+## License
+[ISC](https://choosealicense.com/licenses/isc/)
